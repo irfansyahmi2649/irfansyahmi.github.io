@@ -3,157 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Irfan Syahmi | Retro Terminal</title>
+    <title>Irfan Syahmi | The Daily Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Special+Elite&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --green: #00ff41;
-            --bg: #0a0a0a;
-            --border: #333333;
+        body {
+            background-color: #e8e4d9; /* Warna kertas lama */
+            background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+            color: #1a1a1a;
+            font-family: 'Special Elite', serif; /* Font mesin taip */
         }
-        body { 
-            font-family: 'Space Mono', monospace; 
-            background-color: var(--bg); 
-            color: var(--green);
-            background-image: radial-gradient(#111 10%, transparent 10%);
-            background-size: 20px 20px;
+        .newspaper-title {
+            font-family: 'UnifrakturMaguntia', cursive;
         }
-        .retro-title { font-family: 'VT323', monospace; }
-        
-        /* Scanline Effect - Macam TV Lama */
-        body::before {
-            content: " ";
-            display: block;
-            position: fixed;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 9999;
-            background-size: 100% 4px, 3px 100%;
-            pointer-events: none;
+        .headline {
+            font-family: 'Playfair Display', serif;
+            line-height: 0.9;
+            text-transform: uppercase;
         }
-
-        .crt-window {
-            border: 2px solid var(--green);
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
-            background: rgba(0, 0, 0, 0.9);
+        .border-double-bold {
+            border-bottom: 6px double #1a1a1a;
+            border-top: 6px double #1a1a1a;
         }
-
-        .typing {
-            overflow: hidden;
-            border-right: .15em solid var(--green);
-            white-space: nowrap;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        .column-rule {
+            column-rule: 1px solid #1a1a1a;
         }
-
-        @keyframes typing { from { width: 0 } to { width: 100% } }
-        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: var(--green); } }
-        
-        .btn-retro:hover {
-            background: var(--green);
-            color: black;
-            box-shadow: 0 0 20px var(--green);
+        /* Kesan dakwat luntur sikit */
+        .ink-effect {
+            opacity: 0.9;
+            filter: contrast(1.2) grayscale(1);
         }
-        
-        /* Scrollbar Retro */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: var(--green); }
     </style>
 </head>
-<body class="p-4 md:p-10 leading-relaxed">
+<body class="p-4 md:p-8">
 
-    <div class="max-w-4xl mx-auto">
-        <div class="crt-window rounded-t-lg mb-10 overflow-hidden">
-            <div class="bg-[#00ff41] text-black px-4 py-1 flex justify-between items-center font-bold text-xs">
-                <span>SYSTEM_BOOT_V.2.6</span>
-                <div class="flex gap-2">
-                    <span>[_]</span><span>[X]</span>
-                </div>
+    <div class="max-w-5xl mx-auto border-2 border-[#1a1a1a] p-4 md:p-8 bg-white/30 shadow-2xl">
+        
+        <header class="text-center mb-8">
+            <p class="text-xs font-bold border-b border-[#1a1a1a] pb-1 uppercase tracking-widest">Edisi Khas: Ahad, 2026</p>
+            <h1 class="newspaper-title text-6xl md:text-9xl my-4 ink-effect">The Irfan Gazette</h1>
+            <div class="border-double-bold py-2 flex justify-between items-center text-[10px] md:text-xs font-bold uppercase">
+                <span>Vol. 001 — No. 2649</span>
+                <span class="hidden md:block">SHAH ALAM, SELANGOR, MALAYSIA</span>
+                <span>HARGA: KESABARAN & USAHA</span>
             </div>
-            <div class="p-6 md:p-10">
-                <p class="text-sm mb-2 uppercase tracking-tighter">Login: SUCCESSFUL</p>
-                <h1 class="retro-title text-6xl md:text-8xl font-bold uppercase leading-none mb-4">
-                    IRFAN SYAHMI
-                </h1>
-                <div class="typing max-w-fit italic text-lg mb-6">
-                    > Full-stack Dev & Scriptwriter...
-                </div>
-                <div class="flex flex-wrap gap-4 mt-8">
-                    <a href="#about" class="btn-retro border-2 border-[#00ff41] px-6 py-2 text-xs font-bold uppercase transition-all">[ Tentang_Saya ]</a>
-                    <a href="#resume" class="btn-retro border-2 border-[#00ff41] px-6 py-2 text-xs font-bold uppercase transition-all">[ Resume_User ]</a>
-                    <a href="#contact" class="btn-retro border-2 border-[#00ff41] px-6 py-2 text-xs font-bold uppercase transition-all">[ Hubungi ]</a>
-                </div>
-            </div>
-        </div>
+        </header>
 
-        <section id="about" class="mb-20">
-            <h2 class="retro-title text-4xl mb-6 border-b border-[#00ff41] inline-block uppercase">01. BIODATA_LOG</h2>
-            <div class="space-y-4 text-sm md:text-base">
-                <p>> STATUS: Lepasan SPM (2025)</p>
-                <p>> LOCATION: Shah Alam, Selangor</p>
-                <p>> MISSION: Membina sistem "offline-first" dan skrip kreatif yang berkualiti tinggi.</p>
-                <p class="text-gray-400 mt-6">
-                    Saya bermula dengan <span class="text-[#00ff41]">Termux</span> dan <span class="text-[#00ff41]">Acode</span> untuk menulis kod. Kepakaran saya merangkumi pembangunan sistem PHP/MySQL yang kompleks dan penulisan skrip kreatif untuk pasaran media.
-                </p>
-            </div>
-        </section>
-
-        <section id="resume" class="crt-window mb-20">
-            <div class="bg-[#00ff41] text-black px-4 py-1 font-bold text-xs uppercase">
-                RESUME_DATA_v26.txt
-            </div>
-            <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="font-bold underline mb-4 uppercase">Pendidikan</h3>
-                    <p class="text-sm">Sijil Pelajaran Malaysia (SPM)<br>SMK Seksyen 27 Shah Alam (Tamat: 2025)</p>
-                    
-                    <h3 class="font-bold underline mt-8 mb-4 uppercase">Kemahiran</h3>
-                    <ul class="text-xs space-y-2">
-                        <li>- Full-stack Development (PHP/MySQL)</li>
-                        <li>- Microsoft Office (Excel, Word, PPT)</li>
-                        <li>- Customer Service & Communication</li>
-                        <li>- Scriptwriting (Creative Media)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold underline mb-4 uppercase">Bahasa</h3>
-                    <p class="text-sm">BM: Fasih / BI: Sederhana</p>
-                    
-                    <h3 class="font-bold underline mt-8 mb-4 uppercase">Objektif</h3>
-                    <p class="text-xs italic">
-                        "Mampu bekerja dalam pasukan, cepat belajar dan bersedia menerima arahan dengan baik untuk bidang perkhidmatan pelanggan atau teknikal."
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+            <div class="md:col-span-8 border-r-0 md:border-r border-[#1a1a1a] pr-0 md:pr-8">
+                <h2 class="headline text-5xl md:text-7xl font-black mb-6 ink-effect">
+                    LEPASAN SPM SMK SEKSYEN 27 KUASAI DUNIA FULL-STACK!
+                </h2>
+                <div class="md:columns-2 gap-8 column-rule text-sm leading-relaxed text-justify">
+                    <p class="mb-4">
+                        <span class="text-5xl float-left mr-2 leading-none font-bold">M</span>uhammad Irfan Syahmi, seorang pemuda berusia 17 tahun, telah mengejutkan komuniti teknologi tempatan dengan kemampuannya membina sistem pengurusan gaji (Payroll) yang mampu mengendalikan lebih 700 orang pekerja secara serentak.
+                    </p>
+                    <p>
+                        Bermula dengan hanya menggunakan peranti mudah alih, beliau memanfaatkan kuasa <span class="italic">Termux</span> dan <span class="italic">Acode</span> untuk menulis ribuan baris kod PHP dan SQL. "Tiada alasan untuk tidak belajar," ujar beliau ketika ditemui di pejabat siber peribadinya. Selain kod, beliau juga aktif dalam penulisan skrip kreatif untuk pasaran media.
                     </p>
                 </div>
             </div>
-        </section>
-
-        <section class="mb-20">
-            <h2 class="retro-title text-4xl mb-6 border-b border-[#00ff41] inline-block uppercase">02. RECENT_PROJECTS</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="border border-[#00ff41] p-6 hover:bg-[#00ff41]/10 transition-all">
-                    <h4 class="font-bold">[ PAYROLL_ADMIN ]</h4>
-                    <p class="text-xs mt-2 text-gray-400">Sistem gaji 700+ pekerja dengan PHP/MySQL.</p>
-                </div>
-                <div class="border border-[#00ff41] p-6 hover:bg-[#00ff41]/10 transition-all">
-                    <h4 class="font-bold">[ ROBLOX_UI_DASHBOARD ]</h4>
-                    <p class="text-xs mt-2 text-gray-400">Custom admin panel untuk game environment.</p>
+            
+            <div class="md:col-span-4 bg-[#1a1a1a] text-[#e8e4d9] p-6 shadow-lg">
+                <h3 class="headline text-2xl mb-4 border-b border-[#e8e4d9] pb-2">PROFIL PERIBADI</h3>
+                <ul class="text-xs space-y-4">
+                    <li>
+                        <span class="block font-bold uppercase underline">Objektif:</span>
+                        Berminat dalam perkhidmatan pelanggan. Mampu bekerja dalam pasukan & cepat belajar.
+                    </li>
+                    <li>
+                        <span class="block font-bold uppercase underline">Kemahiran:</span>
+                        Full-stack Web, MS Excel, Word, PowerPoint.
+                    </li>
+                    <li>
+                        <span class="block font-bold uppercase underline">Bahasa:</span>
+                        Melayu (Fasih), Inggeris (Sederhana).
+                    </li>
+                </ul>
+                <div class="mt-8 pt-6 border-t border-[#e8e4d9]/30">
+                    <p class="text-[10px] italic">"Bersedia menerima arahan dengan baik untuk masa depan yang gemilang."</p>
                 </div>
             </div>
         </section>
 
-        <footer id="contact" class="text-center py-10 border-t border-[#00ff41]/30">
-            <p class="text-xs mb-4 uppercase tracking-[0.3em]">Hubungi Talian Utama</p>
-            <div class="space-y-2">
-                <p class="text-2xl font-bold">017-4697934</p>
-                <p class="text-lg">irfansyahmi2649@gmail.com</p>
+        <section class="border-t-2 border-[#1a1a1a] pt-8 mb-12">
+            <h3 class="headline text-3xl mb-8 text-center decoration-double underline">LAPORAN PROJEK SEMASA</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+                <div class="border border-[#1a1a1a] p-4">
+                    <h4 class="font-bold border-b border-[#1a1a1a] mb-2 uppercase">Sistem Payroll Admin</h4>
+                    <p class="text-xs italic">Dibina untuk menguruskan 714 pekerja dengan slip gaji automatik.</p>
+                </div>
+                <div class="border border-[#1a1a1a] p-4">
+                    <h4 class="font-bold border-b border-[#1a1a1a] mb-2 uppercase">eAduan Komuniti</h4>
+                    <p class="text-xs italic">Dashboard digital untuk laporan fasiliti taman perumahan.</p>
+                </div>
+                <div class="border border-[#1a1a1a] p-4">
+                    <h4 class="font-bold border-b border-[#1a1a1a] mb-2 uppercase">Scriptwriting</h4>
+                    <p class="text-xs italic">Penulisan skrip iklan kreatif bertaraf antarabangsa (Thai Market).</p>
+                </div>
             </div>
-            <p class="mt-20 text-[10px] text-gray-600 uppercase italic">
-                -- Terminal ini dikuasakan oleh Irfan Syahmi @ 2026 --
-            </p>
+        </section>
+
+        <footer class="border-t-4 border-[#1a1a1a] pt-6 text-center">
+            <p class="headline text-xl mb-2">HUBUNGI EDITOR: 017-4697934</p>
+            <p class="text-sm font-bold underline">irfansyahmi2649@gmail.com</p>
+            <div class="mt-8 flex justify-center gap-4 opacity-50 grayscale">
+                <div class="w-10 h-10 border border-black flex items-center justify-center text-[8px] font-bold">QR</div>
+                <div class="w-10 h-10 border border-black flex items-center justify-center text-[8px] font-bold">17+</div>
+            </div>
+            <p class="mt-6 text-[9px] uppercase tracking-widest">&copy; 2026 The Irfan Gazette - Hakcipta Terpelihara</p>
         </footer>
+
     </div>
 
 </body>

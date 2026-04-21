@@ -3,153 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Irfan Syahmi | Full-stack Developer & Scriptwriter</title>
+    <title>Irfan Syahmi | Portfolio & Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Dancing+Script:wght@700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #000000;
-            --text: #ffffff;
-            --text-muted: #888888;
-            --border: #222222;
-        }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--bg); 
-            color: var(--text);
-            scroll-behavior: smooth;
-        }
+        :root { --bg: #000000; --text: #ffffff; --text-muted: #888888; --border: #222222; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); scroll-behavior: smooth; }
         .font-serif { font-family: 'Cormorant Garamond', serif; }
         .font-berangkai { font-family: 'Dancing Script', cursive; }
         
-        /* Animasi Muncul */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-            animation: fadeInUp 1s ease-out forwards;
-        }
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-
-        /* Hover Effect untuk Kad */
-        .card-hover {
-            transition: all 0.4s ease;
-            border: 1px solid var(--border);
-        }
-        .card-hover:hover {
-            border-color: #ffffff;
-            background: rgba(255, 255, 255, 0.03);
-            transform: translateY(-5px);
-        }
-
-        ::selection {
-            background: #ffffff;
-            color: #000000;
-        }
+        .animate-fade-in { animation: fadeInUp 1s ease-out forwards; opacity: 0; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .card-hover { transition: all 0.4s ease; border: 1px solid var(--border); }
+        .card-hover:hover { border-color: #ffffff; background: rgba(255, 255, 255, 0.03); }
+        
+        ::selection { background: #ffffff; color: #000000; }
     </style>
 </head>
-<body class="selection:bg-white selection:text-black antialiased">
+<body class="antialiased">
 
-    <nav class="fixed w-full z-50 top-0 left-0 mix-blend-difference bg-black/50 backdrop-blur-sm border-b border-white/5">
+    <nav class="fixed w-full z-50 top-0 left-0 bg-black/80 backdrop-blur-md border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl font-extrabold tracking-tighter">I.S</div>
-            <div class="flex gap-6 text-xs font-bold tracking-widest uppercase text-muted hover:text-white transition">
-                <a href="#about">About</a>
-                <a href="#projek">Work</a>
-                <a href="#contact">Contact</a>
+            <div class="flex gap-6 text-[10px] font-bold tracking-widest uppercase text-gray-400">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#projek" class="hover:text-white transition">Work</a>
+                <a href="#resume" class="hover:text-white transition">Resume</a>
+                <a href="#contact" class="hover:text-white transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section class="min-h-screen flex flex-col justify-center items-center px-6 text-center pt-24">
-        <h2 class="font-berangkai text-4xl md:text-5xl text-muted mb-4 animate-fade-in delay-1 opacity-0">
-            Hello, Saya
-        </h2>
-        <h1 class="font-serif text-6xl md:text-9xl font-bold tracking-tight leading-none mb-10 animate-fade-in delay-2 opacity-0">
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+        <h2 class="font-berangkai text-3xl text-muted mb-4 animate-fade-in" style="animation-delay: 0.2s">Hello, Saya</h2>
+        <h1 class="font-serif text-6xl md:text-9xl font-bold tracking-tight mb-8 animate-fade-in" style="animation-delay: 0.4s">
             Irfan Syahmi
         </h1>
-        <div class="w-24 h-[1px] bg-white animate-fade-in delay-3 opacity-0"></div>
-        <p class="mt-10 text-xs md:text-sm tracking-[0.5em] text-muted uppercase animate-fade-in delay-3 opacity-0">
-            Full-stack Developer &bull; Scriptwriter &bull; Creative Thinker
+        <p class="text-xs md:text-sm tracking-[0.5em] text-muted uppercase animate-fade-in" style="animation-delay: 0.6s">
+            Developer &bull; Scriptwriter &bull; Shah Alam
         </p>
-        <a href="#about" class="mt-16 animate-bounce opacity-50">
-            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14l-7 7-7-7M12 21V3"></path></svg>
-        </a>
     </section>
 
-    <section id="about" class="max-w-5xl mx-auto px-6 py-32 border-t border-white/5">
+    <section id="about" class="max-w-5xl mx-auto px-6 py-24 border-t border-white/5">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-4">
-                <h2 class="font-serif text-5xl font-bold tracking-tight text-muted">Siapa Saya.</h2>
+                <h2 class="font-serif text-5xl font-bold text-muted italic">Siapa Saya.</h2>
             </div>
-            <div class="md:col-span-8 space-y-6 text-gray-300 leading-relaxed">
-                <p class="text-xl font-medium text-white">
-                    Seorang developer berusia 17 tahun yang obses dengan gabungan logik kod dan kreativiti penulisan.
-                </p>
-                <p>
-                    Sebagai seorang **Full-stack Developer**, saya pakar dalam membina sistem web yang kompleks menggunakan **PHP, MySQL, dan Tailwind CSS**. Daripada sistem pengurusan gaji (Payroll Admin System) sehinggalah ke sistem e-Aduan komuniti, saya bina dari kosong di dalam persekitaran **Termux** dan **Acode**.
-                </p>
-                <p>
-                    Di sudut lain, saya adalah seorang **Scriptwriter** yang kreatif. Penulisan saya menumpukan pada penceritaan yang kuat untuk pasaran media (seperti skrip iklan Thailand) dan pembangunan UI untuk game (seperti Admin Dashboard di Roblox).
-                </p>
-                <p class="font-berangkai text-2xl text-muted">
-                    "Saya tidak cuma menulis kod, saya mencipta solusi."
-                </p>
+            <div class="md:col-span-8 space-y-6 text-gray-400">
+                <p class="text-xl text-white">Full-stack Developer & Scriptwriter berusia 17 tahun.</p>
+                <p>Saya adalah lepasan SPM yang mempunyai minat mendalam dalam dunia teknologi dan perkhidmatan pelanggan. Mampu bekerja dalam pasukan, cepat belajar, dan sentiasa bersedia menerima arahan dengan baik untuk memberikan solusi terbaik.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="max-w-5xl mx-auto px-6 py-24 border-t border-white/5 bg-white/5 rounded-[3rem] my-10">
+        <h2 class="font-serif text-5xl font-bold text-center mb-16">Resume Digital.</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                <h3 class="text-xs font-bold tracking-[0.3em] text-muted uppercase border-b border-white/10 pb-2">Maklumat Peribadi</h3>
+                <ul class="space-y-4 text-sm">
+                    <li><span class="text-muted block text-[10px] uppercase">Nama Penuh</span> Muhammad Irfan Syahmi Bin Suhaimi</li>
+                    <li><span class="text-muted block text-[10px] uppercase">Lokasi</span> Shah Alam, Selangor</li>
+                    <li><span class="text-muted block text-[10px] uppercase">Pendidikan</span> SPM (SMK Seksyen 27 Shah Alam) - 2025</li>
+                </ul>
+            </div>
+
+            <div class="space-y-6">
+                <h3 class="text-xs font-bold tracking-[0.3em] text-muted uppercase border-b border-white/10 pb-2">Kemahiran & Bahasa</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <span class="text-muted block text-[10px] uppercase mb-2">Soft Skills</span>
+                        <ul class="text-[11px] space-y-1">
+                            <li>&bull; Komunikasi Asas</li>
+                            <li>&bull; Kerja Berpasukan</li>
+                            <li>&bull; Cepat Belajar</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <span class="text-muted block text-[10px] uppercase mb-2">Teknikal</span>
+                        <ul class="text-[11px] space-y-1">
+                            <li>&bull; MS Excel & Word</li>
+                            <li>&bull; Web Development</li>
+                            <li>&bull; Scriptwriting</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5">
+                    <span class="text-muted block text-[10px] uppercase mb-2">Bahasa</span>
+                    <p class="text-xs">Melayu (Fasih), Inggeris (Asas/Sederhana)</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="projek" class="max-w-7xl mx-auto px-6 py-24 border-t border-white/5">
-        <h2 class="font-serif text-5xl font-bold tracking-tight text-muted text-center mb-16">Karya Terpilih.</h2>
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-            
-            <div class="md:col-span-8 rounded-3xl p-10 card-hover group">
-                <span class="text-[10px] font-bold text-muted uppercase tracking-widest">Web System / Full-stack</span>
-                <h3 class="text-3xl font-bold mt-2 mb-4 group-hover:italic transition-all">Payroll Admin System</h3>
-                <p class="text-gray-400 text-sm max-w-md">Sistem pengurusan gaji gred industri untuk 700+ pekerja. Dibina dengan fokus utama pada keselamatan data, enkripsi, dan kelajuan proses.</p>
-                <div class="mt-8 flex gap-2">
-                    <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-muted">PHP</span>
-                    <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-muted">MySQL</span>
-                    <span class="px-3 py-1 border border-white/10 rounded-full text-[10px] text-muted">Tailwind</span>
-                </div>
+        <h2 class="font-serif text-5xl font-bold text-muted text-center mb-16 italic">Hasil Kerja.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card-hover p-8 rounded-3xl">
+                <h4 class="text-xl font-bold mb-2">Payroll Admin System</h4>
+                <p class="text-sm text-gray-500">Sistem gaji untuk 700+ pekerja menggunakan PHP & MySQL.</p>
             </div>
-
-            <div class="md:col-span-4 rounded-3xl p-10 card-hover">
-                <span class="text-[10px] font-bold text-muted uppercase tracking-widest">Game Dev / UI</span>
-                <h3 class="text-2xl font-bold mt-2 mb-4">Roblox UI Admin</h3>
-                <p class="text-gray-400 text-sm">Dashboard pengurusan game interaktif. Memudahkan admin mengawal persekitaran game.</p>
+            <div class="card-hover p-8 rounded-3xl">
+                <h4 class="text-xl font-bold mb-2">eAduan Taman</h4>
+                <p class="text-sm text-gray-500">Sistem laporan komuniti moden dengan UI clean.</p>
             </div>
-
-            <div class="md:col-span-6 rounded-3xl p-10 card-hover">
-                <span class="text-[10px] font-bold text-muted uppercase tracking-widest">Scriptwriting / Media</span>
-                <h3 class="text-3xl font-bold mt-2 mb-4">Thai Market Script</h3>
-                <p class="text-gray-400 text-sm max-w-sm">Penulisan skrip kreatif untuk iklan pasaran Thailand yang menumpukan pada emosi dan penceritaan unik.</p>
-            </div>
-
-            <div class="md:col-span-6 rounded-3xl p-10 card-hover">
-                <span class="text-[10px] font-bold text-muted uppercase tracking-widest">Community / Web</span>
-                <h3 class="text-3xl font-bold mt-2 mb-4">eAduan Taman</h3>
-                <p class="text-gray-400 text-sm max-w-sm">Sistem dashboard komuniti moden untuk membuat laporan dan memantau status kerosakan fasiliti taman perumahan.</p>
-            </div>
-
         </div>
     </section>
 
     <section id="contact" class="max-w-5xl mx-auto px-6 py-32 border-t border-white/5 text-center">
-        <h2 class="font-berangkai text-4xl text-muted mb-4">Mari berkerjasama</h2>
-        <p class="font-serif text-6xl md:text-8xl font-bold tracking-tight mb-16 leading-none">
-            Mula Sesuatu Yang Hebat.
-        </p>
-        <div class="inline-block glass-dark border border-white/10 rounded-full px-10 py-6 hover:border-white transition group cursor-pointer">
-            <a href="mailto:irfansyahmi2649@gmail.com" class="text-2xl md:text-4xl font-extrabold tracking-tighter group-hover:italic transition-all">
-                irfansyahmi2649@gmail.com
-            </a>
-        </div>
-        <div class="mt-24 text-[10px] text-muted tracking-[0.5em] uppercase">
-            &copy; 2026 Irfan Syahmi &bull; Built in Acode & Termux
+        <h2 class="font-berangkai text-3xl text-muted mb-4">Mari Berhubung</h2>
+        <a href="mailto:irfansyahmi2649@gmail.com" class="font-serif text-4xl md:text-6xl font-bold hover:italic transition-all">
+            irfansyahmi2649@gmail.com
+        </a>
+        <p class="mt-10 text-xl font-bold tracking-widest">017-4697934</p>
+        <div class="mt-24 text-[10px] text-gray-700 tracking-[0.5em] uppercase">
+            &copy; 2026 Muhammad Irfan Syahmi
         </div>
     </section>
 
